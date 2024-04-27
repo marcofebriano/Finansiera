@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "charts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/danielgindi/Charts.git",
+      "state" : {
+        "revision" : "0a229f8c914b0ec93798cee058cf75b339297513",
+        "version" : "5.0.0"
+      }
+    },
+    {
+      "identity" : "mfrbottomsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marcofebriano/MFRBottomSheet.git",
+      "state" : {
+        "revision" : "eb1b01998f7ac0d1d7610e6983e0814136c8bf8b",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "monthyearwheelpicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bendodson/MonthYearWheelPicker.git",
+      "state" : {
+        "revision" : "b6fdaf380d1e439e1a639ad94ed744a735632d61",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}

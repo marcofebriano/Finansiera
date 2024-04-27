@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C72C9092-7CEB-4071-860F-265482B2A0AD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C1A5DE1-3511-48FA-A9DD-ABBE155C0C73"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Household Needs/Feature/ToDoList/ToDoListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "saveTodoList(itemName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8C1A5DE1-3511-48FA-A9DD-ABBE155C0C73 - 9dc9ce3f17ee9043"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finansiera.ToDoListViewModel.saveTodoList(itemName: Swift.String) -&gt; ()"
+                  moduleName = "Finansiera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marco.ramadhani/Documents/Household%20Needs%20App/Household%20Needs/Household%20Needs/Feature/ToDoList/ToDoListVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  uuid = "8C1A5DE1-3511-48FA-A9DD-ABBE155C0C73 - 3a15c940e040d4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout Finansiera.ToDoList) -&gt; () in Finansiera.ToDoListViewModel.saveTodoList(itemName: Swift.String) -&gt; ()"
+                  moduleName = "Finansiera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marco.ramadhani/Documents/Household%20Needs%20App/Household%20Needs/Household%20Needs/Feature/ToDoList/ToDoListVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0D63704-B3DF-4CEF-AD33-24BB0C4240EB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Household Needs/Feature/ToDoList/ToDoListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "saveTodoList(itemName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "057948B6-A574-41D2-9F9F-FE7C5535515A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Household Needs/Feature/ToDoList/ToDoListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "saveTodoList(itemName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25433FE9-199E-4357-814F-D760D524AC01"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Household Needs/Feature/ToDoList/ToDoListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E973EE46-FF9C-4EA0-94FE-09013D45E902"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Household Needs/Feature/ToDoList/ToDoListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "411DBACC-E9F4-44A5-A1FB-75D36A75F1E6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Household Needs/Feature/ToDoList/ToDoListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "setupViewModel()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "411DBACC-E9F4-44A5-A1FB-75D36A75F1E6 - 45673f83c3fcb168"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Finansiera.ToDoListViewState) -&gt; () in Finansiera.ToDoListVC.setupViewModel() -&gt; ()"
+                  moduleName = "Finansiera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marco.ramadhani/Documents/Household%20Needs%20App/Household%20Needs/Household%20Needs/Feature/ToDoList/ToDoListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "388">
+               </Location>
+               <Location
+                  uuid = "411DBACC-E9F4-44A5-A1FB-75D36A75F1E6 - 45673f83c3fcb168"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Finansiera.ToDoListViewState) -&gt; () in Finansiera.ToDoListVC.setupViewModel() -&gt; ()"
+                  moduleName = "Finansiera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marco.ramadhani/Documents/Household%20Needs%20App/Household%20Needs/Household%20Needs/Feature/ToDoList/ToDoListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "338">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "591B0C66-9C38-4B65-9FAC-A46FFE59FB0A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Household Needs/Feature/ToDoList/ToDoListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "dataSource"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
