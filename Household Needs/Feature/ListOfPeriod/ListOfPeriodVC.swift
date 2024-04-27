@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import MFRBottomSheet
+import DGCharts
 
 public struct PeriodSection: Hashable {
     var title: String
@@ -49,6 +50,20 @@ class ListOfPeriodVC: CommonViewController {
         $0.delegate = self
     }
     
+    private lazy var barChart: BarChartView = builder(BarChartView.self) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.xAxis.labelPosition = .bottom
+        $0.xAxis.drawGridLinesEnabled = false
+        $0.xAxis.valueFormatter = BarChartBottomValueFormatter()
+        $0.xAxis.granularity = 1
+        $0.xAxis.labelCount = 12
+        $0.chartDescription.enabled = false
+        $0.rightAxis.enabled = false
+        $0.leftAxis.drawLabelsEnabled = true
+        $0.leftAxis.valueFormatter = BarChartSideValueFormatter()
+        $0.leftAxis.axisMinimum = 0
+    }
+    
     private lazy var dataSource: UITableViewDiffableDataSource<PeriodSection, Period> = {
         let source = UITableViewDiffableDataSource<PeriodSection, Period>(tableView: tableView) { tableView, indexPath, itemModel in
             guard let cell = tableView.dequeueReusableCell(ListOfPeriodCell.self, for: indexPath) else { return UITableViewCell() }
@@ -60,6 +75,10 @@ class ListOfPeriodVC: CommonViewController {
         }
         return source
     }()
+    
+    private var screenWidth: CGFloat {
+        UIScreen.main.bounds.width
+    }
     
     private var datePickerCard: MFRBaseBottomSheet?
     private var verificationCard: MFRBaseBottomSheet?
@@ -88,10 +107,18 @@ class ListOfPeriodVC: CommonViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-8)
         }
         
+        view.addSubview(barChart)
+        barChart.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(screenWidth * 0.5)
+        }
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
+            make.top.equalTo(barChart.snp.bottom)
             make.bottom.equalTo(infoLabel.snp.top).offset(-8)
-            make.left.right.top.equalTo(view.safeAreaLayoutGuide)
+            make.left.right.equalTo(view.safeAreaLayoutGuide)
         }
         
         view.addSubview(addButton)
@@ -128,6 +155,8 @@ extension ListOfPeriodVC {
             switch state {
             case .showData(let datas):
                 self.setupDataSource(datas)
+            case .updateChart(let period):
+                self.setupchart(period)
             case .error(let message):
                 CommonToast.show(title: message)
             }
@@ -149,6 +178,23 @@ extension ListOfPeriodVC {
         self.emptyState.isHidden = !datas.isEmpty ? true : false
         self.tableView.isHidden = datas.isEmpty ? true : false
         self.infoLabel.isHidden = datas.isEmpty ? true : false
+    }
+    
+    private func setupchart(_ datas: [Period]) {
+        var dataGrouping = datas.compactMap {
+            return BarChartDataEntry(x: Double($0.getMonthDigit), y: $0.totalSpend)
+        }
+        dataGrouping.reverse()
+
+        let dataSet = BarChartDataSet(entries: dataGrouping, label: "")
+        dataSet.colors = HouseholdConstant.chartColors
+        dataSet.valueTextColor = .black
+        dataSet.drawValuesEnabled = true
+        
+        let data = BarChartData(dataSet: dataSet)
+        data.barWidth = 0.9
+        data.setValueFormatter(PieChartValueFormatter())
+        barChart.data = data
     }
     
     func openVerificationCard(period: String) {
@@ -178,10 +224,14 @@ extension ListOfPeriodVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let month = viewModel?.sections[section].title ?? "year"
+        let year = viewModel?.sections[section].title ?? "year"
         let sum = viewModel?.getSumOfTheYear(from: section) ?? 0.0
         guard let header = tableView.dequeueReusableHeaderFooter(ListOfPeriodHeader.self) else { return nil }
-        header.applyWith(.init(periodTitle: month, grandTotal: sum))
+        header.applyWith(.init(periodTitle: year, grandTotal: sum))
+        header.headerTapped = { [weak self] in
+            guard let self else { return }
+            viewModel?.updateChartDataBased(year)
+        }
         return header
     }
 }
