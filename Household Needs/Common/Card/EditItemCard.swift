@@ -29,7 +29,7 @@ enum EditItemActionType {
     var image: UIImage? {
         switch self {
         case .edit:
-            return UIImage(systemName: "pencil")
+            return UIImage(systemName: "pencil.circle.fill")
         case .addToCart:
             return UIImage(systemName: "cart.fill")
         case .delete:
@@ -73,7 +73,7 @@ final class EditItemCard: MFRFixedBottomSheet {
             view.build {
                 $0.image = type.image?.withTintColor(type.color, renderingMode: .alwaysOriginal)
                 $0.titleText = type.name
-                $0.titleColor = type.color
+                $0.titleColor = .black
                 $0.spacingIconAndText = 20
                 $0.separatorHidden = false
             }

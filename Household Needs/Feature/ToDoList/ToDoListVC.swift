@@ -42,15 +42,6 @@ class ToDoListVC: UIViewController {
         $0.messageText = "Duh datanya belum ada nih. Tambahin dulu yuk!"
     }
     
-    private lazy var infoLabel = builder(UILabel.self) {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = .systemFont(ofSize: 12)
-        $0.numberOfLines = 2
-        $0.textAlignment = .center
-        $0.textColor = .black
-        $0.text = "Geser item ke kiri untuk menghapus, mengedit ataupun memasukan ke keranjang"
-    }
-    
     private lazy var dataSource: UITableViewDiffableDataSource<PeriodSection, ToDoList> = {
         let source = UITableViewDiffableDataSource<PeriodSection, ToDoList>(tableView: tableView) { tableView, indexPath, itemModel in
             guard let cell = tableView.dequeueReusableCell(ToDoListCell.self, for: indexPath) else { return UITableViewCell() }
@@ -92,12 +83,6 @@ class ToDoListVC: UIViewController {
                 .equalTo(view.safeAreaLayoutGuide).inset(padding)
         }
         
-        view.addSubview(infoLabel)
-        infoLabel.snp.makeConstraints { make in
-            make.left.right.equalTo(view.safeAreaLayoutGuide).inset(padding)
-            make.bottom.equalTo(addButton.snp.top)
-        }
-        
         view.addSubview(searchBar)
         searchBar.snp.makeConstraints { make in
             make.left.top.right.equalTo(view.safeAreaLayoutGuide)
@@ -107,7 +92,7 @@ class ToDoListVC: UIViewController {
         tableView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(searchBar.snp.bottom).offset(8)
-            make.bottom.equalTo(infoLabel.snp.top)
+            make.bottom.equalTo(addButton.snp.top).offset(-8)
         }
         
         view.addSubview(emptyState)
@@ -145,7 +130,6 @@ class ToDoListVC: UIViewController {
         
         dataSource.applySnapshotUsingReloadData(snapshot)
         emptyState.isHidden = !datas.isEmpty ? true : false
-        infoLabel.isHidden = datas.isEmpty ? true : false
         tableView.isHidden = datas.isEmpty ? true : false
     }
     
