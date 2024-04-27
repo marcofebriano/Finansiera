@@ -80,6 +80,8 @@
 		DC8D9D3A2B2C330200149A59 /* ListOfPeriodDeleteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D9D392B2C330200149A59 /* ListOfPeriodDeleteHelper.swift */; };
 		DC8D9D3D2B2C38D100149A59 /* MonthYearWheelPicker in Frameworks */ = {isa = PBXBuildFile; productRef = DC8D9D3C2B2C38D100149A59 /* MonthYearWheelPicker */; };
 		DC8D9D402B2C404000149A59 /* ToDoListHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D9D3F2B2C404000149A59 /* ToDoListHeaderCell.swift */; };
+		DCAC49CC2BDC9C1D001D6255 /* BarChartBottomValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAC49CB2BDC9C1D001D6255 /* BarChartBottomValueFormatter.swift */; };
+		DCAC49CE2BDC9D8C001D6255 /* BarChartSideValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAC49CD2BDC9D8C001D6255 /* BarChartSideValueFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -167,6 +169,8 @@
 		DC8D9D372B2C318B00149A59 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
 		DC8D9D392B2C330200149A59 /* ListOfPeriodDeleteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPeriodDeleteHelper.swift; sourceTree = "<group>"; };
 		DC8D9D3F2B2C404000149A59 /* ToDoListHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListHeaderCell.swift; sourceTree = "<group>"; };
+		DCAC49CB2BDC9C1D001D6255 /* BarChartBottomValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartBottomValueFormatter.swift; sourceTree = "<group>"; };
+		DCAC49CD2BDC9D8C001D6255 /* BarChartSideValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartSideValueFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,8 @@
 				484C042B2B14938B002CBDFF /* ImageAsset.swift */,
 				489E202C2B23104D004CC8C7 /* Routing.swift */,
 				DC1881962BDC26110012E07D /* PieChartValueFormatter.swift */,
+				DCAC49CB2BDC9C1D001D6255 /* BarChartBottomValueFormatter.swift */,
+				DCAC49CD2BDC9D8C001D6255 /* BarChartSideValueFormatter.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -545,7 +551,9 @@
 				489E1FF42B205AB3004CC8C7 /* coredata_householdNeeds.xcdatamodeld in Sources */,
 				489A98B22B299E6500BAE484 /* ToDoListVM.swift in Sources */,
 				489E202B2B2306A1004CC8C7 /* ListOfGroceryVM.swift in Sources */,
+				DCAC49CE2BDC9D8C001D6255 /* BarChartSideValueFormatter.swift in Sources */,
 				DC1881972BDC26110012E07D /* PieChartValueFormatter.swift in Sources */,
+				DCAC49CC2BDC9C1D001D6255 /* BarChartBottomValueFormatter.swift in Sources */,
 				489E20282B230635004CC8C7 /* CommonViewController.swift in Sources */,
 				DC8D9D362B2B17FF00149A59 /* PeriodService.swift in Sources */,
 				DC8D9D382B2C318B00149A59 /* ItemService.swift in Sources */,

@@ -29,6 +29,8 @@ class ListOfPeriodHeader: UITableViewHeaderFooterView {
         UIEdgeInsets(vertical: 8, horizontal: 8)
     }
     
+    public var headerTapped: (() -> Void)?
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         didInit()
@@ -44,6 +46,9 @@ class ListOfPeriodHeader: UITableViewHeaderFooterView {
         contentView.addSubview(titleLabel)
         contentView.addSubview(totalSpend)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        contentView.addGestureRecognizer(tap)
+        
         totalSpend.snp.makeConstraints { make in
             make.right.top.bottom.equalToSuperview().inset(padding)
         }
@@ -56,6 +61,10 @@ class ListOfPeriodHeader: UITableViewHeaderFooterView {
     public func applyWith(_ model: ListOfPeriodCell.ViewModel) {
         titleLabel.text = model.periodTitle
         totalSpend.text = model.grandTotal.asThousandIDR
+    }
+    
+    @objc func tapped() {
+        self.headerTapped?()
     }
 }
 

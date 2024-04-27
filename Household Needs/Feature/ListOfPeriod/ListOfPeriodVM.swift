@@ -9,6 +9,7 @@ import Foundation
 
 enum PeriodState {
     case showData(_ period: [Period])
+    case updateChart(_ period: [Period])
     case error(_ message: String)
 }
 
@@ -20,6 +21,7 @@ protocol periodVM: AnyObject {
     func deleteData(periodID: String)
     func pushToListOfGrocery(periodID: String)
     func getSumOfTheYear(from section: Int) -> Double
+    func updateChartDataBased(_ year: String)
 }
 
 class ListOfPeriodVM: periodVM {
@@ -62,6 +64,9 @@ class ListOfPeriodVM: periodVM {
             case .success(let data):
                 guard let periods = data else { return }
                 self.data = periods
+                
+                guard let latestYear = self.data.first?.getYear else { return }
+                self.updateChartDataBased(latestYear)
             case .failure(let error):
                 debugPrint(error.localizedDescription)
             }
@@ -102,6 +107,16 @@ class ListOfPeriodVM: periodVM {
         }
         return colTotalSpend.sum
     }
+    
+    func updateChartDataBased(_ year: String) {
+         guard year.count > 0 else {
+             listenData?(.updateChart(data))
+             return
+         }
+         let copyDatas: [Period] = data
+            .filter { $0.getYear.contains(year) }
+        listenData?(.updateChart(copyDatas))
+     }
 }
 
 extension ListOfPeriodVM {

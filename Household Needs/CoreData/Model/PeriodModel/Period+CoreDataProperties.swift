@@ -31,6 +31,10 @@ extension Period {
     var getMonth: String {
         return Date(timeIntervalSince1970: timestamp).getMonth
     }
+    
+    var getMonthDigit: Int {
+        return Date(timeIntervalSince1970: timestamp).get(.month)
+    }
 }
 
 extension Period: Identifiable {
