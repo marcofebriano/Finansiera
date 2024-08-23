@@ -289,10 +289,6 @@ extension ListOfGroceryVC: GroceryAddCard2Delegate {
 
 extension ListOfGroceryVC: MFRBaseBottomSheetDelegate {
     func bottomSheet(_ bottomSheet: MFRBaseBottomSheet, didDismiss withInfo: Any?, animated: Bool) {
-        defer {
-            itemID = nil
-            verificationCard = nil
-        }
         if bottomSheet == verificationCard {
             verificationCardHandler(withInfo)
         } else if bottomSheet == editItemCard {

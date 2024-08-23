@@ -403,9 +403,9 @@
 		489E20092B20C0EC004CC8C7 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				489A98922B2732ED00BAE484 /* ToDoList */,
-				489E20102B221A34004CC8C7 /* ListOfPeriod */,
 				484C04172B147CC1002CBDFF /* ListOfGrocery */,
+				489E20102B221A34004CC8C7 /* ListOfPeriod */,
+				489A98922B2732ED00BAE484 /* ToDoList */,
 			);
 			path = Feature;
 			sourceTree = "<group>";

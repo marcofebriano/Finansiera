@@ -176,13 +176,7 @@ extension ToDoListVC: UITableViewDelegate {
 }
 
 extension ToDoListVC: MFRBaseBottomSheetDelegate {
-    func bottomSheet(_ bottomSheet: MFRBaseBottomSheet, didDismiss withInfo: Any?, animated: Bool) {
-        defer {
-            todolistID = nil
-            addCard = nil
-            editItemCard = nil
-        }
-        
+    func bottomSheet(_ bottomSheet: MFRBaseBottomSheet, didDismiss withInfo: Any?, animated: Bool) {        
         if bottomSheet == addCard {
             addCardDismissHandler(withInfo)
         } else if bottomSheet == editItemCard {
@@ -201,11 +195,7 @@ extension ToDoListVC: MFRBaseBottomSheetDelegate {
     }
     
     private func editCardDismissHandler(_ withInfo: Any?) {
-        defer {
-            selectIndexPath = nil
-        }
-        
-        guard let infoAsDict = withInfo as? [String: EditItemActionType],
+       guard let infoAsDict = withInfo as? [String: EditItemActionType],
               let type = infoAsDict["type"],
               let selectIndexPath else { return }
         let data = self.dataSource.itemIdentifier(for: selectIndexPath)
@@ -220,15 +210,18 @@ extension ToDoListVC: MFRBaseBottomSheetDelegate {
         case .delete:
             viewModel?.deleteItem(todolistID: data?.toDoListID ?? "")
         }
+        
+        self.selectIndexPath = nil
     }
 }
 
 extension ToDoListVC: GroceryAddCard2Delegate {
     func groceryCard(_ card: GroceryAddCard2, type save: GroceryCardType, data: GroceryModel) {
-        defer { todolistID = nil }
         if save == .addFromTodolist {
             viewModel?.saveToCart(from: data, todolistID: todolistID ?? "")
         }
+        
+        todolistID = nil
     }
 }
 
